@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
-
+  post "hello", to: "pages#hello"
   root 'pages#home'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
