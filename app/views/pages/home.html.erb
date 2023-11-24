@@ -5,6 +5,7 @@
 
 <% if current_user %>
   <h1>Admin: <%= current_user.admin? %></h1>
+  <%= link_to "Monitor Jobs", sidekiq_web_path %>
   <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: "delete"} %>
 <% else %>
   <%= link_to "login", new_user_session_path  %>
